@@ -245,3 +245,13 @@ textarea {
     -moz-box-shadow: 0px 0px 14px 0px #8785A2;
     box-shadow: 0px 0px 14px 0px #8785A2;
 }
+.fa-ellipsis,
+.fa-briefcase,
+.fa-medal,
+.fa-music,
+.fa-handshake,
+.fa-flag,
+.fa-moon,
+.fa-sun{
+    pointer-events: none;
+}
