@@ -19,6 +19,31 @@
 
 </head>
 <body>
+    <div class="note-add">
+        
+        <div class="form">
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="clear"></div>
+            <form id="form">
+                <h1>Not Ekleyin</h1>
+                <input type="text" id="baslik" placeholder="Not başlığı giriniz..." required maxlength="12">
+                <textarea id="w3review" rows="4" cols="50" maxlength="200">
+                    </textarea>
+                <select id="kategori">
+                    <option value="null">Kategori Seçiniz</option>
+                    <option value="kisisel">Kişisel</option>
+                    <option value="is">İş</option>
+                    <option value="spor">Spor</option>
+                    <option value="muzik">Müzik</option>
+                    <option value="kariyer">Kariyer</option>
+                    <option value="diger">Diğer</option>
+                  </select>
+                <input type="button" id="saveNote" value="Kaydet">
+            </form>
+        </div>
+    </div>
     <header>
         Notes App
     </header>
@@ -26,17 +51,21 @@
     <section class="container">
         <!-- Navigition start -->
         <nav>
-            <button>
+            <center>
+            <button class="plus-button">
                 <i class="fa-solid fa-plus"></i>
             </button>
+        </center>
             <ul>
-                <li>Kategori</li>
-                <li>Kategori</li>
-                <li>Kategori</li>
-                <li>Kategori</li>
-                <li>Kategori</li>
+                <li><i class="fa-solid fa-ellipsis"></i>Hepsi</li>
+                <li><i class="fa-solid fa-user"></i>Kişisel</li>
+                <li><i class="fa-sharp fa-solid fa-briefcase"></i>İş</li>
+                <li><i class="fa-solid fa-medal"></i>Spor</li>
+                <li><i class="fa-solid fa-music"></i>Müzik</li>
+                <li><i class="fa-solid fa-handshake"></i>Kariyer</li>
+                <li><i class="fa-solid fa-flag"></i>Diğer</li>
             </ul>
-            <button>
+            <button class="dark-button">
                 <i class="fa-solid fa-moon"></i>
                 Dark
             </button>
@@ -46,12 +75,23 @@
 
         <!-- content start -->
             <div class="content">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolorem mollitia accusamus perspiciatis dolorum commodi esse neque eos doloremque numquam nulla nostrum sequi, et ad, est similique suscipit corporis iusto quas natus repellendus cum? Commodi temporibus veritatis iste, quas neque explicabo aperiam dicta sunt quod laboriosam debitis tempore facilis reiciendis.
-            </div>
-        <!-- content end -->
-    </section>
-    <!-- container end -->
 
+                <div class="card">
+                    <div class="card-header">
+                        selamselamaa
+                    </div>
+                    <div class="card-desc">
+                        DQWJKNWQDKJQNWDJKLNWQDJNQWDJKLDWNQJDKQNDJKQNWQDKJWNDKQJNDWQJKNDWQJKDNWQJKNDQJKNKWJDNKJQWDNQKJDNWQJKNDQJKDNWKJNQKJWNKJQDNQKJDQNKJWDNQKJWNDKJQDNWKJQDNQKJDNQKJDNQKDJNQWDKJNDKQWDNWQKJDNWQKJDNWKQDJNQKWJDNQ
+                    </div>
+                    <div class="card-tag sport">Person</div>
+                </div>
+               
+
+            </div>
+            <!-- content end -->
+        </section>
+        <!-- container end -->
+        
     <!-- footer start -->
     <footer>
         Created By
