@@ -8,7 +8,6 @@ const notEkleTextArea = document.querySelector("#not-icerik")
 const selectValue = document.querySelector("#kategori")
 const formKaydet = document.querySelector("#saveNote")
 
-
 // not ekle buton
 const noteAddBtn = document.querySelector(".plus-button")
 // Kategoriler
@@ -54,6 +53,8 @@ var categoryCounter = 0
 function yeniIcerikEkle(name,desc,tag){
     let card = document.createElement("div")
     card.classList.add("card")
+    card.classList.add("animate__animated")
+    card.classList.add("animate__zoomInDown")
     content.appendChild(card)
 
     let cardHeader = document.createElement("div")
@@ -89,6 +90,8 @@ function yeniIcerikEkle(name,desc,tag){
 function categoryIcerikEkle(name,desc,tag) {
     let card = document.createElement("div")
     card.classList.add("card")
+    card.classList.add("animate__animated")
+    card.classList.add("animate__zoomInDown")
     content.appendChild(card)
 
     let cardHeader = document.createElement("div")
@@ -122,10 +125,10 @@ formKaydet.addEventListener("click",()=> {
         selectValue.value = "null"
         popUp.innerHTML = "<i class='fa-solid fa-check'></i> Success"
         popUp.classList.add("pop-up-active")
-        
+        close.click()
          setTimeout(()=>{
             popUp.classList.remove("pop-up-active")
-            close.click()
+
          },2000)
     }
     
@@ -136,16 +139,18 @@ function cardRemove(event) {
     const eventTarget = event.target;
    
     if(eventTarget.classList[1] == "fa-trash"){
-        const cardElement  = eventTarget.parentElement.parkentElement
+        const cardElement  = eventTarget.parentElement.parentElement
         let removeConfirm = confirm("R u sure?")
         if (removeConfirm === true) {
             popUp.innerHTML = "<i class='fa-solid fa-check'></i> Success"
             popUp.classList.add("pop-up-active")
-            cardElement.remove()
+        
             setTimeout(()=>{
                 popUp.classList.remove("pop-up-active")
              
              },2000)
+             cardElement.remove()
+            
             
         }
        
@@ -155,22 +160,7 @@ addEventListener("click",cardRemove)
 
 
 
-function darkModeControl() {
-   if(localStorage.getItem("dark") == "true"){
-    document.body.classList.add("dark-bg")
-    darkButton.classList.add("light-bg")
-    lightBtn.classList.add("d-none")
-    darkBtn.classList.remove("d-none")
-    footer.classList.add("text-white")
-   }
-   else {
-    document.body.classList.remove("dark-bg")
-    darkButton.classList.remove("light-bg")
-    lightBtn.classList.add("d-none")
-    darkBtn.classList.remove("d-none")
-    footer.classList.remove("text-white")
-   }
- }
+
 
 function darkMode() {
     document.body.classList.toggle("dark-bg")
@@ -188,7 +178,24 @@ function darkMode() {
 }
 
 darkButton.addEventListener("click",darkMode)
-darkModeControl()
+
+// function darkModeControl() {
+//     if(localStorage.getItem("dark") == "true"){
+//      document.body.classList.add("dark-bg")
+//      darkButton.classList.add("light-bg")
+//      lightBtn.classList.add("d-none")
+//      darkBtn.classList.remove("d-none")
+//      footer.classList.add("text-white")
+//     }
+//     else {
+//      document.body.classList.remove("dark-bg")
+//      darkButton.classList.remove("light-bg")
+//      lightBtn.classList.add("d-none")
+//      darkBtn.classList.remove("d-none")
+//      footer.classList.remove("text-white")
+//     }
+//   }
+// darkModeControl()
 
 
 
