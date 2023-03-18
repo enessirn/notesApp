@@ -19,6 +19,8 @@
 
 </head>
 <body>
+    <div class="pop-up">
+    </div>
     <div class="note-add">
         
         <div class="form">
@@ -27,20 +29,20 @@
             </div>
             <div class="clear"></div>
             <form id="form">
-                <h1>Not Ekleyin</h1>
-                <input type="text" id="baslik" placeholder="Not başlığı giriniz..." required maxlength="12">
-                <textarea id="w3review" rows="4" cols="50" maxlength="200">
+                <h1>Create a Note</h1>
+                <input type="text" id="baslik" placeholder="Type a note title..." required maxlength="12" autocomplete="off">
+                <textarea id="not-icerik" rows="4" cols="50" maxlength="200">
                     </textarea>
                 <select id="kategori">
-                    <option value="null">Kategori Seçiniz</option>
-                    <option value="kisisel">Kişisel</option>
-                    <option value="is">İş</option>
-                    <option value="spor">Spor</option>
-                    <option value="muzik">Müzik</option>
-                    <option value="kariyer">Kariyer</option>
-                    <option value="diger">Diğer</option>
+                    <option value="null">Select a category</option>
+                    <option value="person">Person</option>
+                    <option value="business">Business</option>
+                    <option value="sport">Sport</option>
+                    <option value="music">Music</option>
+                    <option value="career">Career</option>
+                    <option value="other">Other</option>
                   </select>
-                <input type="button" id="saveNote" value="Kaydet">
+                <input type="button" id="saveNote" value="Save">
             </form>
         </div>
     </div>
@@ -57,17 +59,25 @@
             </button>
         </center>
             <ul>
-                <li><i class="fa-solid fa-ellipsis"></i>Hepsi</li>
-                <li><i class="fa-solid fa-user"></i>Kişisel</li>
-                <li><i class="fa-sharp fa-solid fa-briefcase"></i>İş</li>
-                <li><i class="fa-solid fa-medal"></i>Spor</li>
-                <li><i class="fa-solid fa-music"></i>Müzik</li>
-                <li><i class="fa-solid fa-handshake"></i>Kariyer</li>
-                <li><i class="fa-solid fa-flag"></i>Diğer</li>
+                <li class="category-button" data-category="all"><i class="fa-solid fa-ellipsis"></i>All</li>
+                <li class="category-button" data-category="person"><i class="fa-solid fa-user"></i>Person</li>
+                <li class="category-button" data-category="business"><i class="fa-sharp fa-solid fa-briefcase"></i>Business</li>
+                <li class="category-button" data-category="sport"><i class="fa-solid fa-medal"></i>Sport</li>
+                <li class="category-button" data-category="music"><i class="fa-solid fa-music"></i>Music</li>
+                <li class="category-button" data-category="carerr"><i class="fa-solid fa-handshake"></i>Career</li>
+                <li class="category-button" data-category="other"><i class="fa-solid fa-flag"></i>Other</li>
             </ul>
             <button class="dark-button">
-                <i class="fa-solid fa-moon"></i>
-                Dark
+                <div class="light-btn d-none">
+                    <i class="fa-solid fa-sun"></i>
+                    Light Mode
+                </div>
+                <div class="dark-btn">
+                    <i class="fa-solid fa-moon"></i>
+                    Dark Mode
+                </div>
+                
+              
             </button>
         </nav>
 
@@ -75,28 +85,19 @@
 
         <!-- content start -->
             <div class="content">
-
-                <div class="card">
-                    <div class="card-header">
-                        selamselamaa
-                    </div>
-                    <div class="card-desc">
-                        DQWJKNWQDKJQNWDJKLNWQDJNQWDJKLDWNQJDKQNDJKQNWQDKJWNDKQJNDWQJKNDWQJKDNWQJKNDQJKNKWJDNKJQWDNQKJDNWQJKNDQJKDNWKJNQKJWNKJQDNQKJDQNKJWDNQKJWNDKJQDNWKJQDNQKJDNQKJDNQKDJNQWDKJNDKQWDNWQKJDNWQKJDNWKQDJNQKWJDNQ
-                    </div>
-                    <div class="card-tag sport">Person</div>
-                </div>
                
-
             </div>
             <!-- content end -->
         </section>
         <!-- container end -->
         
     <!-- footer start -->
-    <footer>
+    <footer id="footer">
         Created By
-        <a href="https://www.linkedin.com/in/enessirn/" target="_blank">Enes Şirin</a> 
+        <a href="https://www.linkedin.com/in/enessirn/" target="_blank">Enes Sirin</a> 
     </footer>
     <!-- footer end -->
+
+    <script src="script.js"></script>
 </body>
 </html>
