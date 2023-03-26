@@ -197,6 +197,7 @@ footer a {
     transition: .5s all ;
     display: none;
     position: absolute;
+    z-index: 1000;
     width: 100%;
     height: 100vh;
     background: rgba(0,0,0,.5);
