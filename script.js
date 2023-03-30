@@ -156,7 +156,10 @@ function cardRemove(event) {
     
     if(eventTarget.classList[1] == "fa-trash"){
         const cardElement  = eventTarget.parentElement.parentElement
-        let removeConfirm = confirm("R u sure?")
+        const targetDataIndex = cardElement.dataset.index
+        let localStorageData = JSON.parse(localStorage.getItem('cards'))
+        console.log(localStorageData)
+        const removeConfirm = confirm("R u sure?")
         if (removeConfirm === true) {
             popUp.innerHTML = "<i class='fa-solid fa-check'></i> Success"
             popUp.classList.add("pop-up-active")
@@ -165,7 +168,9 @@ function cardRemove(event) {
                 popUp.classList.remove("pop-up-active")
              
              },2000)
-             console.log(eventTarget)
+             localStorageData.splice(targetDataIndex,1)
+             allCards.splice(targetDataIndex,1)
+             localStorage.setItem('cards',JSON.stringify(allCards))
              cardElement.remove()
             
             
