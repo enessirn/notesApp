@@ -57,7 +57,7 @@ else {
 }
  if (allCards.length > 0) {
     for (let i = 0; i < allCards.length; i++){
-        categoryIcerikEkle(allCards[i].name,allCards[i].desc,allCards[i].tag)
+        categoryIcerikEkle(allCards[i].name,allCards[i].desc,allCards[i].tag, allCards[i].index)
     }
  }
 function yeniIcerikEkle(name,desc,tag){
@@ -210,7 +210,7 @@ function categorySelect(nameCategory) {
             allCards.filter((card) => {
                 return card.tag === nameCategory;
             }).map((card) => {
-                categoryIcerikEkle(card.name, card.desc, card.tag);
+                categoryIcerikEkle(card.name, card.desc, card.tag , card.index);
               
             });
         }
