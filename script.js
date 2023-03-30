@@ -30,7 +30,7 @@ let sun = document.querySelector(".fa-sun")
 // footer
 let footer = document.querySelector("footer")
 
-
+const clearAllButton = document.querySelector('.all-clear')
 noteAddBtn.addEventListener("click",()=>{
     notAdd.classList.add("d-flex")
     notEkleTextArea.value = ""
@@ -159,7 +159,7 @@ function cardRemove(event) {
         const targetDataIndex = cardElement.dataset.index
         let localStorageData = JSON.parse(localStorage.getItem('cards'))
         console.log(localStorageData)
-        const removeConfirm = confirm("R u sure?")
+        const removeConfirm = confirm("Are you sure?")
         if (removeConfirm === true) {
             popUp.innerHTML = "<i class='fa-solid fa-check'></i> Success"
             popUp.classList.add("pop-up-active")
@@ -179,7 +179,23 @@ function cardRemove(event) {
     }
 }
 addEventListener("click",cardRemove)
+function clearALl() {
+    let confirmBoolen = confirm('Are you sure?')
 
+    if (confirmBoolen == true) {
+        allCards = []
+        localStorage.removeItem('cards')
+        popUp.innerHTML = "<i class='fa-solid fa-check'></i> Success"
+        popUp.classList.add("pop-up-active")
+    
+        setTimeout(()=>{
+            popUp.classList.remove("pop-up-active")
+         
+         },2000)
+        location.reload()
+    }
+}
+clearAllButton.addEventListener('click',clearALl)
 function darkMode() {
     document.body.classList.toggle("dark-bg")
     darkButton.classList.toggle("light-bg")
